@@ -51,11 +51,18 @@ mandel_basic(unsigned char *image){
 
 
 #ifdef _WIN64
-int
-main(int argc,
-     char *argv[],
-     char *envp[]){
-    printf("bagus");
+#include <windows.h>
+
+int CALLBACK WinMain(
+HINSTANCE instance,
+HINSTANCE prevInstance,
+LPSTR commandLIne,
+int showCode)
+{
+    char *bagus =
+        "bagus";
+    free(bagus);
+    return 0;
 };
 
 #else 
