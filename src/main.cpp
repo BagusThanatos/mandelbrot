@@ -49,11 +49,22 @@ mandel_basic(unsigned char *image){
     };
 };
 
+
+#ifdef _WIN64
+int
+main(int argc,
+     char *argv[],
+     char *envp[]){
+    printf("bagus");
+};
+
+#else 
 int
 main(int argc, char *argv[], char *envp[]){
-    unsigned char *image = (unsigned char*) malloc(WIDTH * HEIGHT * 3);
-    fwrite(image, WIDTH * HEIGHT, 3, stdout);
-    free(image);
+    //unsigned char *image = (unsigned char*) malloc(WIDTH * HEIGHT * 3);
+    //fwrite(image, WIDTH * HEIGHT, 3, stdout);
+    //free(image);
     printf("%f", XSTART);
     return 0;
 };
+#endif
