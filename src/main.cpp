@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "getopt.h"
 //#include <getopt.h> TODO(bagus): should rewrite getopt()
 
 #define HEIGHT 300
