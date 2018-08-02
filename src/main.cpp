@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#if defined(_WIN64) || defined(_WIN32)
 #include "getopt.h"
+#include <windows.h>
 //#include <getopt.h> TODO(bagus): should rewrite getopt()
+#else
+#include <getopt.h>
+#endif
 
 #define HEIGHT 300
 #define WIDTH 300
@@ -51,8 +56,7 @@ mandel_basic(unsigned char *image){
 };
 
 
-#ifdef _WIN64
-#include <windows.h>
+#if defined(_WIN64) || defined(_WIN32)
 
 int CALLBACK WinMain(
 HINSTANCE instance,
@@ -72,6 +76,9 @@ main(int argc, char *argv[], char *envp[]){
     //unsigned char *image = (unsigned char*) malloc(WIDTH * HEIGHT * 3);
     //fwrite(image, WIDTH * HEIGHT, 3, stdout);
     //free(image);
+    for (int i=0; i<argc; ++i){
+        printf("%s\n", argv[i]);
+    };
     printf("%f", XSTART);
     return 0;
 };
