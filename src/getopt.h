@@ -8,5 +8,5 @@ char *argvp[],
 char *optstring);
 
 extern char *optarg;
-extern int optind, opterr, optopt;
+extern int optind = 1, opterr = 1, optopt;
 
