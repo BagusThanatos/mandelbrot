@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#if defined(_WIN64) || defined(_WIN32)
-#include "getopt.h"
-#include <windows.h>
 //#include <getopt.h> TODO(bagus): should rewrite getopt()
-#else
-#include <getopt.h>
+#include "getopt.h"
+#if defined(_WIN64) || defined(_WIN32)
+#include <windows.h>
 #endif
+
 
 #define HEIGHT 300
 #define WIDTH 300

@@ -1,4 +1,7 @@
-//#include "getopt.h"
+// Need getopt.h included somewhere
+
+optind = 1;
+opterr = 1;
 
 int getopt(
 int argc,
