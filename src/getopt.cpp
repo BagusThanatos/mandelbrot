@@ -1,4 +1,4 @@
-#include "getopt.h"
+//#include "getopt.h"
 
 int getopt(
 int argc,
