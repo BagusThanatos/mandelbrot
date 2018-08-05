@@ -8,16 +8,17 @@ char *argvp[],
 char *optstring);
 
 extern char *optarg;
+char *optarg = NULL;
 extern int optind, opterr , optopt;
 int optind = 1, opterr = 1;
-// Need getopt.h included somewhere
+
 
 int
 getopt(
 int argc,
 char *argvp[],
 char *optstring){
-
+    
     if(optind >= argc){
         return -1;
     };
@@ -32,7 +33,7 @@ char *optstring){
     };
     char *optstr = optstring;
     if(*optstr == ':') return ':';
-
+    
     ++opt;
     while(*optstr != '\0'){
         if(*optstr == *opt){
@@ -41,7 +42,7 @@ char *optstring){
                     // error here
                     return '?';
                 };
-
+                
                 optarg = argvp[optind+1];
                 ++optind;
             };
@@ -58,7 +59,7 @@ int argc,
 char *argv[],
 struct option *Longopts,
 int *Longindex){
-
+    
     return 0;
 }
 
@@ -68,6 +69,6 @@ char *argv[],
 char *optstring,
 struct option *Longopts,
 int *Longindex){
-
+    
     return 0;
 }
