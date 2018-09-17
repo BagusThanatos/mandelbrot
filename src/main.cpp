@@ -23,7 +23,7 @@ mandel_basic(unsigned char *image){
     float ydiff = YSTART - YEND;
     float iter_scale = 1.0f /ITER;
     float depth_scale = DEPTH - 1;
-    
+
 #pragma omp parallel for schedule(dynamic, 1)
     for(int y = 0; y < HEIGHT; ++y) {
         for(int x = 0; x < WIDTH; ++x) {
@@ -48,11 +48,11 @@ mandel_basic(unsigned char *image){
             image[y * WIDTH * 3 + x*3+0] = pixel;
             image[y * WIDTH * 3 + x*3+1] = pixel;
             image[y * WIDTH * 3 + x*3+2] = pixel;
-            
+
         };
-        
+
     };
-};
+}
 
 
 #if defined(_WIN64) || defined(_WIN32)
@@ -69,7 +69,7 @@ int showCode)
     return 0;
 };
 
-#else 
+#else
 int
 main(int argc, char *argv[], char *envp[]){
     //unsigned char *image = (unsigned char*) malloc(WIDTH * HEIGHT * 3);
@@ -78,7 +78,8 @@ main(int argc, char *argv[], char *envp[]){
     for (int i=0; i<argc; ++i){
         printf("%s\n", argv[i]);
     };
-    printf("%f", XSTART);
+    printf("%f\n", XSTART);
+    printf("%d", optind);
     return 0;
-};
+}
 #endif
